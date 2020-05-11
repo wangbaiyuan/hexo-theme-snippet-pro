@@ -93,13 +93,13 @@
 
     // 添加版本号
     gulp.task('rev', function() {
-        return gulp.src('../../public/**/*.html')
+        return gulp.src('./public/**/*.html')
             .pipe(rev())
-            .pipe(gulp.dest('../../public'));
+            .pipe(gulp.dest('./public'));
     });
 
     // 同步执行task
-    gulp.task('deploy', sequence(['less-task', 'minify-css', 'minify-js'], 'rev', 'minify-html'));
+    gulp.task('deploy', sequence(['less-task', 'minify-css', 'minify-js'], 'rev'));
 
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
