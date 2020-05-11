@@ -17,7 +17,7 @@
         path = require('path'),
         paths = {
             root: './',
-            source: './source/' //主题下原文件
+            source: './themes/hexo-theme-snippet/source/' //主题下原文件
         }
 
     /*====================================================
