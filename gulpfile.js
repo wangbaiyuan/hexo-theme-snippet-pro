@@ -93,9 +93,9 @@
 
     // 添加版本号
     gulp.task('rev', function() {
-        return gulp.src('./public/**/*.html')
+        return gulp.src('../../public/**/*.html')
             .pipe(rev())
-            .pipe(gulp.dest('./public'));
+            .pipe(gulp.dest('../../public'));
     });
 
     // 同步执行task
