@@ -8,14 +8,14 @@ menu:
 - page: home
   url: /
   icon:
-- page: 前端
-  url: /categories/前端/
+- page: 技术
+  url: /categories/技术/
   icon:
-- page: 后端
-  url: /categories/后端/
+- page: 岁月
+  url: /categories/岁月/
   icon:
-- page: 工具
-  url: /categories/工具/
+- page: 观点
+  url: /categories/极客视点/
   icon:
 - page: 时间轴
   url: /archives/
@@ -29,7 +29,6 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: './img/head-img.jpg'
   url: 'https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2'
 
 # 各个小工具的设置
@@ -48,7 +47,7 @@ widgets:
 ## 搜索
 jsonContent:
   searchLocal: true
-  searchGoogle: false
+  searchGoogle: true
   posts:
     title: true
     text: true
@@ -68,10 +67,10 @@ notification: |-
 social:
  - name: Github
    icon: git
-   href: //github.com/shenliyang
+   href: //github.com/geekeren
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
+   href: mailto:me@mail.wangbaiyuan.cn
  - name: 联系QQ
    icon: qq
    href: /
@@ -117,7 +116,7 @@ links:
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding:
+branding: 博学广问，自律静思
 
 ## 设置banner背景图片
 banner:

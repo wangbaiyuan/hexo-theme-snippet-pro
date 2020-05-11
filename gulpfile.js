@@ -17,7 +17,7 @@
         path = require('path'),
         paths = {
             root: './',
-            source: './themes/hexo-theme-snippet/source/' //主题下原文件
+            source: './source/' //主题下原文件
         }
 
     /*====================================================
@@ -99,7 +99,7 @@
     });
 
     // 同步执行task
-    gulp.task('deploy', sequence(['minify-css', 'minify-js'], 'rev', 'minify-html'));
+    gulp.task('deploy', sequence(['less-task', 'minify-css', 'minify-js'], 'rev', 'minify-html'));
 
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
