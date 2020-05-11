@@ -5,8 +5,9 @@
                 <%- partial('_partial/busuanzi') %>
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy;
+                <span>&copy;
                     <%= theme.since %> - <%= new Date().getFullYear();%>
+                    <a href="<%= config.url %>" target="_blank"><%= config.title %></a>
                     <% if(theme.beian) { %><a href="//beian.miit.gov.cn/" target="_blank" rel="nofollow">
                         <%= theme.beian %></a>
                     <% } %>

@@ -7,19 +7,19 @@
 menu:
 - page: home
   url: /
-  icon:
+  icon: fa-home
 - page: 技术
   url: /categories/技术/
-  icon:
+  icon: fa-shield
 - page: 岁月
   url: /categories/岁月/
-  icon:
+  icon: fa-heartbeat
 - page: 观点
   url: /categories/极客视点/
-  icon:
+  icon: fa-slideshare
 - page: 时间轴
   url: /archives/
-  icon:
+  icon: fa-history
 
 ## favicon
 favicon: /favicon.ico
