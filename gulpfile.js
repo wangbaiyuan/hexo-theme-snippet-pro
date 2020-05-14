@@ -90,7 +90,7 @@
     });
 
     // 同步执行task
-    gulp.task('deploy', sequence(['less-task', 'minify-css', 'minify-js'], 'rev'));
+    gulp.task('deploy', sequence(['less-task', 'minify-css', 'minify-js', 'rev']));
 
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
