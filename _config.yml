@@ -66,20 +66,23 @@ notification: |-
 ## 社交设置
 social:
  - name: Github
-   icon: git
+   icon: github
    href: //github.com/geekeren
  - name: 邮箱
    icon: envelope-o
    href: mailto:me@mail.wangbaiyuan.cn
- - name: 联系QQ
-   icon: qq
-   href: /
- - name: 微信
-   icon: weixin
-   href: /
- - name: QQ群
-   icon: users
-   href: /
+# - name: 联系QQ
+#   icon: qq
+#   href: /
+# - name: 微信
+#   icon: weixin
+#   href: /
+# - name: QQ群
+#   icon: users
+#   href: /
+ - name: 微博
+   icon: weibo
+   href: //weibo.com/3734351975
  - name: RSS
    icon: feed
    href: /atom.xml

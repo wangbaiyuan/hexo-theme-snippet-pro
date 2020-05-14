@@ -8,8 +8,6 @@
         uglify = require('gulp-uglify'),
         jshint = require('gulp-jshint'),
         stylish = require('jshint-stylish'),
-        notify = require('gulp-notify'),
-        plumber = require('gulp-plumber'),
         htmlclean = require('gulp-htmlclean'),
         htmlmin = require('gulp-htmlmin'),
         rev = require('gulp-rev-append'),
@@ -27,13 +25,9 @@
     // CSS预处理
     gulp.task('less-task', function() {
         return gulp.src(paths.source + 'css/less/_style.less')
-            .pipe(plumber({
-                errorHandler: notify.onError('Error: <%= error.message %>')
-            }))
             .pipe(less())
             .pipe(rename({ basename: "style" }))
             .pipe(gulp.dest(paths.source + 'css'))
-            .pipe(notify({ message: 'less compile complete' }));
     });
 
     // 校验JS语法和风格
@@ -42,7 +36,6 @@
             .pipe(jshint())
             .pipe(jshint.reporter(stylish))
             .pipe(gulp.dest(paths.source + 'js/'))
-            .pipe(notify({ message: 'js compile complete' }));
     });
 
     // 监听任务-主题开发模式
@@ -66,7 +59,6 @@
             }))
             .pipe(minifycss())
             .pipe(gulp.dest('./public'))
-            .pipe(notify({ message: 'css minify complete' }));
     });
 
     // 压缩处理 js
@@ -74,7 +66,6 @@
         return gulp.src('./public/js/*.js')
             .pipe(uglify())
             .pipe(gulp.dest('./public/js'))
-            .pipe(notify({ message: 'js minify complete' }));
     });
 
     // 压缩处理 html
