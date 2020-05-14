@@ -85,7 +85,7 @@
     // 添加版本号
     gulp.task('rev', function() {
         return gulp.src('./public/**/*.html')
-            .pipe(rev())
+            .pipe(rev().on('error', console.log))
             .pipe(gulp.dest('./public'));
     });
 
