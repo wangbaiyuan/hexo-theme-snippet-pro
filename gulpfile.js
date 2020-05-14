@@ -12,7 +12,6 @@
         htmlmin = require('gulp-htmlmin'),
         rev = require('gulp-rev-append'),
         sequence = require('gulp-sequence'),
-        path = require('path'),
         paths = {
             root: './',
             source: './themes/hexo-theme-snippet/source/' //主题下原文件
@@ -53,7 +52,6 @@
     gulp.task('minify-css', function() {
         return gulp.src('./public/**/*.css')
             .pipe(autoprefixer({
-                browsers: ['last 10 versions', 'Firefox >= 20', 'Opera >= 36', 'ie >= 9', 'Android >= 4.0', ],
                 cascade: true, //是否美化格式
                 remove: false //是否删除不必要的前缀
             }))
@@ -72,13 +70,13 @@
     gulp.task('minify-html', function() {
         return gulp.src('./public/**/*.html')
             .pipe(htmlclean())
-            .pipe(htmlmin({
-                removeComments: true, //清除HTML注释
-                collapseWhitespace: true, //压缩HTML
-                minifyJS: true, //压缩页面JS
-                minifyCSS: true, //压缩页面CSS
-                minifyURLs: true
-            }))
+            // .pipe(htmlmin({
+            //     removeComments: true, //清除HTML注释
+            //     collapseWhitespace: true, //压缩HTML
+            //     minifyJS: true, //压缩页面JS
+            //     minifyCSS: true, //压缩页面CSS
+            //     minifyURLs: true
+            // }))
             .pipe(gulp.dest('./public'));
     });
 
@@ -90,7 +88,8 @@
     });
 
     // 同步执行task
-    gulp.task('deploy', sequence(['less-task', 'minify-css', 'minify-js', 'rev']));
+    gulp.task('build', sequence(['less-task']));
+    gulp.task('bundle', sequence(['minify-css', 'minify-js'], 'rev', 'minify-html'));
 
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
