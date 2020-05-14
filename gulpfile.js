@@ -89,7 +89,7 @@
 
     // 同步执行task
     gulp.task('build', sequence(['less-task']));
-    gulp.task('bundle', sequence(['minify-css', 'minify-js'], 'rev', 'minify-html'));
+    gulp.task('bundle', sequence(['minify-css', 'minify-js', 'minify-html'], 'rev'));
 
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
