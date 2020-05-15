@@ -178,7 +178,7 @@ reward:
 
 ## Valine评论
 valine:
-   enable: true
+   enable: false
    appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
    appKey: erIpQac4azoCmgfBB7Dl9maa
    placeholder: 说点什么吧
@@ -201,13 +201,13 @@ livere:
 
 ## Gitalk评论
 gitalk:
-   enable: false
-   clientID:
-   clientSecret:
-   repo:
-   owner:
-   admin:
-   perPage:
+   enable: true
+   clientID: 8fbc26599e94fd5e4f2d
+   clientSecret: 16d6dc93d6a850229a9fd96c74096bd5d491eb82
+   repo: wangbaiyuan.cn
+   owner: geekeren
+   admin: geekeren
+   perPage: 10
    distractionFreeMode: true
 
 ### Disqus评论

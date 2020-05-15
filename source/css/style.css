@@ -1138,6 +1138,16 @@ pre {
   margin-bottom: 25px;
   text-align: center;
 }
+.prev-next-wrap.article-nav {
+  overflow: hidden;
+}
+.prev-next-wrap .pre-post,
+.prev-next-wrap .next-post {
+  width: 48%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .prev-next-wrap .pre-post {
   float: left;
 }
@@ -1892,6 +1902,9 @@ Darcula color scheme from the JetBrains family of IDEs
   }
   .prev-next-wrap a {
     display: block;
+  }
+  .article-nav {
+    overflow: hidden;
   }
   .post .post-head {
     text-align: left;
