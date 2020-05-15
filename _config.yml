@@ -150,7 +150,7 @@ toc: true
 highlightTheme:
 
 ## bootstrap配置
-bootstrap:
+bootstrap: false
 
 ## ICON配置
 fontAwesome:
