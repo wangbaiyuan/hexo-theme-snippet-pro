@@ -1968,3 +1968,6 @@ Darcula color scheme from the JetBrains family of IDEs
     margin-bottom: 10px;
   }
 }
+.gt-comments-null {
+  display: none;
+}

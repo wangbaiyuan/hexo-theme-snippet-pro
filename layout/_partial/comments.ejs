@@ -1,0 +1,32 @@
+<div class="gt-container">
+
+    <%
+        validComments(site.data.comments, page).forEach(comment =>  {
+    %>
+        <div class="gt-comments">
+            <div style="position: relative;">
+                <div class="gt-comment gt-comment-admin" style="transform-origin: center top;">
+                    <div class="gt-avatar gt-comment-avatar">
+                        <img src="https://wangbaiyuan.cn/avatar/<%= comment.comment_author %>.png?size=128"
+                             alt="@<%= comment.comment_author %>">
+                    </div>
+                    <div class="gt-comment-content">
+                        <div class="gt-comment-header">
+                            <div class="gt-comment-block-2"></div>
+                            <a class="gt-comment-username">
+                                <%= comment.comment_author %>
+                            </a>
+                            <span class="gt-comment-text">commented at</span>
+                            <span class="gt-comment-date">
+                                <%= moment(comment.comment_date).format('YYYY-MM-DD HH:mm') %>
+                            </span>
+                        </div>
+                        <div class="gt-comment-body markdown-body"><p><%= comment.comment_content %></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%
+    })
+    %>
+</div>

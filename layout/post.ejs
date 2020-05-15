@@ -65,5 +65,6 @@
 <% if(page.comments){ %>
 <div id="comments">
     <%- partial('_vendor/comments/index', {page: page}) %>
+    <%- partial('_partial/comments', {page: page}) %>
 </div>
 <% } %>
