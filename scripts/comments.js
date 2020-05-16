@@ -11,7 +11,7 @@ function getGithubComments(siteData, post) {
     if(!siteData['github-comments']) {
         return []
     }
-    return siteData['github-comments'].filter(c => (c.comment_post_hashID === hashIdOfPost(post)));
+    return siteData['github-comments'].filter(c => (c.comment_post_hashID === hashIdOfPost(post).toString()));
 }
 
 hexo.extend.helper.register('getWPComments', getWPComments);

@@ -16,6 +16,11 @@
             source: './themes/hexo-theme-snippet/source/' //主题下原文件
         }
 
+    function handleError(error) {
+        gutil.log(error.message);
+        process.exit(1);
+    }
+
     /*====================================================
          开发主题
     ====================================================*/
@@ -26,6 +31,7 @@
             .pipe(less())
             .pipe(rename({ basename: "style" }))
             .pipe(gulp.dest(paths.source + 'css'))
+            .on('error', handleError);
     });
 
     // 校验JS语法和风格
@@ -34,6 +40,7 @@
             .pipe(jshint())
             .pipe(jshint.reporter(stylish))
             .pipe(gulp.dest(paths.source + 'js/'))
+            .on('error', handleError);
     });
 
     // 监听任务-主题开发模式
@@ -56,6 +63,7 @@
             }))
             .pipe(minifycss())
             .pipe(gulp.dest('./public'))
+            .on('error', handleError);
     });
 
     // 压缩处理 js
@@ -63,27 +71,29 @@
         return gulp.src('./public/js/*.js')
             .pipe(uglify())
             .pipe(gulp.dest('./public/js'))
+            .on('error', handleError);
     });
 
     // 压缩处理 html
     gulp.task('minify-html', function() {
         return gulp.src('./public/**/*.html')
             .pipe(htmlclean())
-            .pipe(gulp.dest('./public'));
+            .pipe(gulp.dest('./public'))
+            .on('error', handleError);;
     });
 
     // 添加版本号
     gulp.task('rev', function() {
         return gulp.src('./public/**/*.html')
             .pipe(rev().on('error', console.log))
-            .pipe(gulp.dest('./public'));
+            .pipe(gulp.dest('./public'))
+            .on('error', handleError);
     });
 
     // 同步执行task
     gulp.task('build', sequence(['less-task']));
     gulp.task('bundle', sequence(['minify-css', 'minify-js', 'minify-html'], 'rev'));
 
-    gulp.task('github-token',)
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
         console.log("[complete] please execute： hexo d");

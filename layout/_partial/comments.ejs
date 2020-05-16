@@ -20,7 +20,11 @@
                                 <%= moment(comment.comment_date).format('YYYY-MM-DD HH:mm') %>
                             </span>
                         </div>
-                        <div class="gt-comment-body markdown-body"><p><%= comment.comment_content %></p></div>
+                        <div class="gt-comment-body markdown-body">
+                            <p>
+                                <%- comment.comment_content %>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
