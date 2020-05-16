@@ -37,10 +37,11 @@ carousel:
 widgets:
   - search
   - notification
-  - social
-  - category
-  - archive
-  - tagcloud
+  - follow
+  - subscribe
+#  - category
+#  - archive
+#  - tagcloud
   - friends
 
 
@@ -64,7 +65,7 @@ notification: |-
 #            </p>
 
 ## 社交设置
-social:
+follow_me:
  - name: Github
    icon: github
    href: //github.com/geekeren
@@ -86,6 +87,12 @@ social:
  - name: RSS
    icon: feed
    href: /atom.xml
+
+subscribe_wechat:
+  content: |
+    扫一扫关注<br/>
+    《我是极客人》微信公众号
+  qr_code: /img/wechat.jpg
 
 ## 文章分类设置
 cate_config:

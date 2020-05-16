@@ -1,10 +1,10 @@
-<% if(theme.social){%>
+<% if(theme.follow_me){%>
 <div class="widget">
     <h3 class="title">
-        <%= __('social') %>
+        <%= __('follow_me') %>
     </h3>
     <div class="content social">
-        <% theme.social.forEach(function (item) {%>
+        <% theme.follow_me.forEach(function (item) {%>
         <a href="<%- item.href%>" rel="external nofollow" title="<%- item.name%>" target="_blank">
             <i class="<%- item.icon%> fa fa-<%- item.icon%>"></i>
         </a>

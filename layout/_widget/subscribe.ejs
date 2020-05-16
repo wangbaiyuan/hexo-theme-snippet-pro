@@ -1,0 +1,18 @@
+<% if(theme.subscribe_wechat){ %>
+    <div class="widget">
+        <h3 class="title">
+            <%= __('subscribe_wechat') %>
+        </h3>
+        <div class="content subscribe_wechat">
+            <div>
+                <img
+                        width="200"
+                        src="<%= theme.subscribe_wechat.qr_code %>" alt="<%- theme.subscribe_wechat.content %>"
+                />
+            </div>
+            <div>
+                <%- theme.subscribe_wechat.content %>
+            </div>
+        </div>
+    </div>
+<% } %>

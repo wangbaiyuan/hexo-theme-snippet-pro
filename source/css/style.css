@@ -1230,6 +1230,13 @@ pre {
   border: 1px solid #19a9f2;
   text-decoration: none;
 }
+.widget .subscribe_wechat {
+  text-align: center;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  flex-direction: column;
+}
 .widget .social a {
   display: inline-block;
   text-align: center;
