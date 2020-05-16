@@ -1,0 +1,44 @@
+<div class="widget">
+    <h3 class="title">
+        <%= __('random_posts') %>
+    </h3>
+    <div class="content random_posts">
+        <ul>
+            <%
+            //随机生成 min 到 max 之间的整数
+            function random(min, max) {
+                return Math.floor((max - min + 1) * Math.random()) + min;
+            }
+
+            // len:生成整数的数量   start:最小值   end:最大值
+            function getRandomArr(len, start, end) {
+                let arr = [];
+                while (arr.length < len) {
+                    let num = random(start, end);
+                    if (arr.indexOf(num) == -1) {
+                        arr.push(num);
+                    }
+                }
+                return arr;
+            }
+
+            const posts = site.posts.toArray();
+            let random_posts = [];
+            if (posts.length > 10) {
+                //生成 0到100以内的10个数
+                const result = getRandomArr(10, 0, posts.length);
+                random_posts = posts.filter((post, index) => result.indexOf(index) >= 0)
+            }
+            random_posts.forEach(post => { %>
+                <li>
+                    <div class="post-item">
+                        <a href="<%= post.permalink %>" target="_blank"><%= post.title %></a>
+                        <div class="date"><%= moment(post.date).format('YYYY-MM-DD') %></div>
+                    </div>
+                </li>
+            <%
+            })
+            %>
+        </ul>
+    </div>
+</div>

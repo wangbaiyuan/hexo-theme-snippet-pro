@@ -1006,13 +1006,14 @@ pre {
   .widget {
     background: @white_color;
     padding: 16px 25px;
+    font-size: 16px;
 
     ul {
       padding: 0;
+      line-height: 1.5em;
 
       li {
         list-style: none;
-
         &.archive-list-item {
           width: 50%;
           display: inline-block;
@@ -1030,6 +1031,17 @@ pre {
 
       &:after {
         content: ")";
+      }
+    }
+    .random_posts {
+      .post-item {
+        margin-bottom: 10px;
+        border-bottom: solid 1px #eeeeee;
+        .date {
+          font-size: 12px;
+          color: #333333;
+          text-align: right;
+        }
       }
     }
   }
@@ -1097,7 +1109,7 @@ pre {
     align-items: center;
     flex-direction: column;
   }
-  .social a {
+  .follow_me a {
     display: inline-block;
     text-align: center;
     width: 40px;
@@ -1108,6 +1120,15 @@ pre {
     .border-radius(3px);
     margin-right: 10px;
     margin-bottom: 10px;
+    &.weibo {
+      background-color: #ec4e4e;
+    }
+    &.github {
+      background-color: #333333;
+    }
+    &.rss {
+      background-color: #FF9800
+    }
 
     &:hover {
       background: @theme_color;
@@ -1533,6 +1554,15 @@ pre {
   }
 }
 
-.gt-comments-null {
-  display: none;
+.gt-container{
+  &.brief .gt-comments {
+    padding-top: 0;
+    .gt-comment-content {
+      margin-left: 0;
+    }
+  }
+  .gt-comments-null {
+    display: none;
+  }
+
 }

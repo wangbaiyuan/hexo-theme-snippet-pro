@@ -3,9 +3,9 @@
     <h3 class="title">
         <%= __('follow_me') %>
     </h3>
-    <div class="content social">
+    <div class="content follow_me">
         <% theme.follow_me.forEach(function (item) {%>
-        <a href="<%- item.href%>" rel="external nofollow" title="<%- item.name%>" target="_blank">
+        <a href="<%- item.href%>" rel="external nofollow" title="<%- item.name%>" target="_blank" class="<%= item.name%>">
             <i class="<%- item.icon%> fa fa-<%- item.icon%>"></i>
         </a>
         <%})%>

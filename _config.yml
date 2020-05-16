@@ -38,6 +38,8 @@ widgets:
   - search
   - notification
   - follow
+  - random_posts
+  - recent_comments
   - subscribe
 #  - category
 #  - archive
@@ -66,10 +68,10 @@ notification: |-
 
 ## 社交设置
 follow_me:
- - name: Github
+ - name: github
    icon: github
    href: //github.com/geekeren
- - name: 邮箱
+ - name: email
    icon: envelope-o
    href: mailto:me@mail.wangbaiyuan.cn
 # - name: 联系QQ
@@ -81,10 +83,10 @@ follow_me:
 # - name: QQ群
 #   icon: users
 #   href: /
- - name: 微博
+ - name: weibo
    icon: weibo
    href: //weibo.com/3734351975
- - name: RSS
+ - name: rss
    icon: feed
    href: /atom.xml
 

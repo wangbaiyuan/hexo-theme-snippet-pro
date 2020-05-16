@@ -1,17 +1,26 @@
 const { hashIdOfPost } = require('../utils/helper');
 
 function getWPComments(siteData, post) {
-    if(!siteData['wp-comments']) {
+    const all = siteData['wp-comments']
+    if(!all) {
         return []
     }
-    return siteData['wp-comments'].filter(c => (post.id && c.comment_post_ID === post.id.toString()));;
+    if (!post) {
+        return all.slice(0, 10);
+    }
+    return all.filter(c => (post.id && c.comment_post_ID === post.id.toString()));
 }
 
 function getGithubComments(siteData, post) {
-    if(!siteData['github-comments']) {
+    const all = siteData['github-comments'];
+
+    if(!all) {
         return []
     }
-    return siteData['github-comments'].filter(c => (c.comment_post_hashID === hashIdOfPost(post).toString()));
+    if (!post) {
+        return all.slice(0, 10);
+    }
+    return all.filter(c => (c.comment_post_hashID === hashIdOfPost(post).toString()));
 }
 
 hexo.extend.helper.register('getWPComments', getWPComments);
