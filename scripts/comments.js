@@ -1,3 +1,5 @@
+const { hashIdOfPost } = require('../utils/helper');
+
 function getWPComments(siteData, post) {
     if(!siteData['wp-comments']) {
         return []
