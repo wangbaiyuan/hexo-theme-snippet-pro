@@ -1,11 +1,15 @@
 function getWPComments(siteData, post) {
-    const comments = siteData['github-comments'].filter(c => (post.id && c.comment_post_ID === post.id.toString()));
-    return comments;
+    if(!siteData['wp-comments']) {
+        return []
+    }
+    return siteData['wp-comments'].filter(c => (post.id && c.comment_post_ID === post.id.toString()));;
 }
 
 function getGithubComments(siteData, post) {
-    const comments = siteData['github-comments'].filter(c => (c.comment_post_hashID === hashIdOfPost(post)));
-    return comments;
+    if(!siteData['github-comments']) {
+        return []
+    }
+    return siteData['github-comments'].filter(c => (c.comment_post_hashID === hashIdOfPost(post)));
 }
 
 hexo.extend.helper.register('getWPComments', getWPComments);
