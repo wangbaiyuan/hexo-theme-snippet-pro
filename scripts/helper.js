@@ -1,3 +1,5 @@
+const md5 = require('md5');
+
 function lazyImage(post) {
     var content = post.content.toString();
     var imgRe = /<img.*?\ssrc=[\'\"]\S+[\'\"]\s.*?>/gim;
@@ -9,5 +11,7 @@ function lazyImage(post) {
     });
     return data;
 }
+const hashIdOfPost = (post) => post.abbrlink || md5(post.slug);
 
 hexo.extend.helper.register('lazyImage', lazyImage);
+hexo.extend.helper.register('hashIdOfPost', hashIdOfPost);

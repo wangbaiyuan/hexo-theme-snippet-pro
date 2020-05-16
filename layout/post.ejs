@@ -65,6 +65,7 @@
 <% if(page.comments){ %>
 <div id="comments">
     <%- partial('_vendor/comments/index', {page: page}) %>
-    <%- partial('_partial/comments', {page: page}) %>
+    <%- partial('_partial/comments', {page: page, comments: getGithubComments(site.data, page)}) %>
+    <%- partial('_partial/comments', {page: page, comments: getWPComments(site.data, page)}) %>
 </div>
 <% } %>

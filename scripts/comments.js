@@ -1,6 +1,12 @@
-function validComments(allComments, post) {
-    const validComments = allComments.filter(c => (c.comment_post_ID === post.id.toString() && c.comment_approved === '1'));
-    return validComments;
+function getWPComments(siteData, post) {
+    const comments = siteData['github-comments'].filter(c => (post.id && c.comment_post_ID === post.id.toString()));
+    return comments;
 }
 
-hexo.extend.helper.register('validComments', validComments);
+function getGithubComments(siteData, post) {
+    const comments = siteData['github-comments'].filter(c => (c.comment_post_hashID === hashIdOfPost(post)));
+    return comments;
+}
+
+hexo.extend.helper.register('getWPComments', getWPComments);
+hexo.extend.helper.register('getGithubComments', getGithubComments);

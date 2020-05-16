@@ -11,8 +11,8 @@ var gitalk = new Gitalk({
     repo: "<%= theme.gitalk.repo%>",
     owner: "<%= theme.gitalk.owner%>",
     admin: ["<%= theme.gitalk.admin%>"],
-    id: md5(location.pathname),
-    distractionFreeMode: <%= theme.gitalk.distractionFreeMode%>
+    id: "<%= hashIdOfPost(page) %>",
+    distractionFreeMode: "<%= theme.gitalk.distractionFreeMode%>"
 });
 gitalk.render('gitalk-container');
 </script>

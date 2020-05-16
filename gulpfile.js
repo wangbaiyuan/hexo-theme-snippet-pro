@@ -83,6 +83,7 @@
     gulp.task('build', sequence(['less-task']));
     gulp.task('bundle', sequence(['minify-css', 'minify-js', 'minify-html'], 'rev'));
 
+    gulp.task('github-token',)
     // 部署前代码处理
     gulp.task('default', ['deploy'], function(e) {
         console.log("[complete] please execute： hexo d");
