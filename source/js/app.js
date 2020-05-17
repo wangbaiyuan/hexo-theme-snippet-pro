@@ -79,9 +79,10 @@ window.onload = function() {
     scrollCallback();
 
     //监听滚动事件
+    var top = $toc.offsetTop;
     window.addEventListener('scroll', function() {
         if ($toc) {
-            var top = $toc.offsetTop;
+            console.log(top);
             var left = $toc.offsetLeft;
             var width = $toc.offsetWidth;
             if (getScrollTop() <= top) {

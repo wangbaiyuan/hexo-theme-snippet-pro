@@ -1182,6 +1182,10 @@ pre {
 .sidebar .widget .category-list-count:after {
   content: ")";
 }
+.sidebar .widget .recent_comments {
+  overflow-y: auto;
+  max-height: 500px;
+}
 .sidebar .widget .random_posts .post-item {
   margin-bottom: 10px;
   border-bottom: solid 1px #eeeeee;
@@ -1394,8 +1398,6 @@ pre {
    toc
 ====================================================*/
 #article-toc {
-  padding-top: 1em;
-  background-color: #fff;
   top: 0;
   bottom: 70px;
   overflow-y: auto;

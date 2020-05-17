@@ -1,0 +1,8 @@
+<aside class="col-md-4 sidebar">
+    <%- partial('_widget/follow', null, {cache: true}) %>
+    <%- partial('_widget/subscribe', null, {cache: true}) %>
+</aside>
+<%if(theme.toc){ %>
+
+<%- partial('_partial/toc', null, {cache: false}) %>
+<% }%>
