@@ -1997,6 +1997,19 @@ Darcula color scheme from the JetBrains family of IDEs
     margin-bottom: 10px;
   }
 }
+.news img {
+  max-height: 200px;
+  max-width: 30%;
+}
+.scroll-fix {
+  float: right;
+}
+@media (max-width: 992px) {
+  .scroll-fix {
+    display: none;
+    position: relative;
+  }
+}
 .gt-container.brief .gt-comments {
   padding-top: 0;
 }
