@@ -1,51 +1,63 @@
+<ol class="breadcrumb">
+    <li>
+        <%= page.title %>
+    </li>
+    <li>
+        <%= page.description %>
+    </li>
+</ol>
 <% page.posts.forEach(function(post){ %>
     <%
-        var _photoUrl = post.img;
-        if(!_photoUrl) {
+        var imageUrls = [post.img];
+        if (imageUrls.length > 0) {
             var urls = lazyImage(post);
-            console.log(urls);
-
-            if(urls && urls.length > 0) {
-                var random = Math.floor(Math.random() * (urls.length));
-                _photoUrl = urls[random];
-                console.log('vvv', _photoUrl)
-
+            if (urls && urls.length > 0) {
+                imageUrls = urls.length > 3 ? urls.splice(0, 3) : urls;
             } else if (theme.defaultImgs && theme.defaultImgs.length > 0) {
                 var urls2 = theme.defaultImgs;
                 var random2 = Math.floor(Math.random() * (urls2.length));
-                _photoUrl = (urls2.length > 0 && urls2[random2]) || '';
+                imageUrls = [(urls2.length > 0 && urls2[random2])] || '';
             }
-            console.log('dd' + _photoUrl)
-
         }
-
     %>
-    <article class="post">
-        <% if(_photoUrl) { %>
-            <div class="post-media">
-                <a href="<%- url_for(post.path) %>">
-                    <img class="img-ajax" src="<%- url_for('/img/loading.gif') %>" data-src="<%- url_for(_photoUrl) %>"
-                         alt="<%- post.title %>">
-                </a>
-            </div>
-        <% } %>
+    <article class="post news" id="<%= md5(post.link) %>">
         <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="<%= post.link %>" target="_blank">
-                        <%- post.title %></a>
-                </h1>
+            <header class="post-head home-post-head">
+                <img src="<%= new URL(post.link).hostname %>/" alt="">
+                <div>
+                    <a href="<%= post.link %>" target="_blank"><%- post.author %></a>
+                    发表了
+                    <span>
+                        《<a href="<%= post.link %>" target="_blank"><%- post.title %></a>》
+                </span>
+                </div>
                 <div class="post-meta"> &bull;
                     <time class="post-date" datetime="" title="">
                         <%- date(post.date, "YYYY年MM月DD日") %>
                     </time>
                 </div>
-            </div>
+            </header>
+            <%
+                imageUrls = imageUrls.filter(url => (!!url));
+            if(imageUrls){
+            %>
+                <div class="">
+                    <a href="<%- post.link %>" target="_blank">
+                        <% imageUrls.forEach((imgUrl) => { %>
+                            <img src="<%= imgUrl %>"
+                                 onerror="setDefaultImage()"
+                                 alt="<%- post.title %>">
+                        <%
+                        })
+                        %>
+                    </a>
+                </div>
+            <% } %>
             <p class="brief">
                 <% if(post.excerpt) { %>
-                    <%- post.excerpt %>
+                    <%= truncate(strip_html(post.excerpt), {length: 200, separator: ''}) + '…' %>
                 <% } else { %>
-                    <%- post.content %>
+                    <%= truncate(strip_html(post.content), {length: 200, separator: ''}) %>
                 <% } %>
             </p>
         </div>

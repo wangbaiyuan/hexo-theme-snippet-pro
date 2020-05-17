@@ -17,6 +17,9 @@ menu:
 - page: 观点
   url: /categories/极客视点/
   icon: fa-slideshare
+- page: 业界动态
+  url: /moment/
+  icon: fa-slideshare
 - page: 时间轴
   url: /archives/
   icon: fa-history

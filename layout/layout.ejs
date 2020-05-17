@@ -12,7 +12,7 @@
             <% if(theme.toc && is_post()){ %>
                 <%- partial('_partial/_sidebar/post') %>
             <% } else { %>
-                <%- partial('_partial/_sidebar/default') %>
+                <%- partial('_partial/_sidebar/default', { fixedWidget: 'subscribe'}) %>
             <% } %>
         </div>
     </div>
