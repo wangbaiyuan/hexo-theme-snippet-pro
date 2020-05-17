@@ -23,13 +23,11 @@
     <article class="post news" id="<%= md5(post.link) %>">
         <div class="post-content">
             <header class="post-head home-post-head">
-                <img src="<%= new URL(post.link).hostname %>/" alt="">
-                <div>
+                <div class="title">
+                    <img src="<%= post.icon %>" alt="">
                     <a href="<%= post.link %>" target="_blank"><%- post.author %></a>
                     发表了
-                    <span>
-                        《<a href="<%= post.link %>" target="_blank"><%- post.title %></a>》
-                </span>
+                    <span><a href="<%= post.link %>" target="_blank"><%- post.title %></a></span>
                 </div>
                 <div class="post-meta"> &bull;
                     <time class="post-date" datetime="" title="">
