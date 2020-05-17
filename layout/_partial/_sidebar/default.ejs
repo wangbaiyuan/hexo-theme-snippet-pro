@@ -1,9 +1,15 @@
-<% if(theme.widgets && theme.widgets.length >0){ %>
-<aside class="col-md-4 sidebar">
-    <% theme.widgets.forEach(function(widget){ %>
-    <div class="<%= widget === fixedWidget ? 'scroll-fix' : '' %>">
+<% if(theme.widgets && theme.widgets.length > 0){ %>
+    <aside class="col-md-4 sidebar">
+        <% theme.widgets.forEach(function(widget){ %>
+            <% if(widget !== fixedWidget) {%>
+            <%- partial('_widget/' + widget) %>
+            <% } else { %>
+    </aside>
+    <aside class="col-md-4 sidebar scroll-fix">
         <%- partial('_widget/' + widget) %>
-    </div>
-    <% }) %>
-</aside>
-<%}%>
+    </aside>
+    <aside class="col-md-4 sidebar">
+        <% } %>
+        <% }) %>
+    </aside>
+<% } %>
