@@ -1,6 +1,6 @@
 <div>
 
-    <% if(page.layout) { %>
+    <% if(page.layout && page.layout !== 'page') { %>
         <%- partial('_customizedLayout/' + page.layout) %>
     <% }
     else if(page.title == 'tags' || page.type == 'tags'){

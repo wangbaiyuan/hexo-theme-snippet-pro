@@ -1,34 +1,22 @@
-<%
-if(!is_home()) { %>
-    <ol class="breadcrumb">
-        <% if(page.tag) { %>
-            <li>
-                <%= page.tag %>
-            </li>
-        <% } if(page.category) { %>
-            <li>
-                <%= page.category %>
-            </li>
-        <% } else { %>
-        <% } %>
-    </ol>
-<%
-}
-%>
-
 <% page.posts.forEach(function(post){ %>
     <%
         var _photoUrl = post.img;
         if(!_photoUrl) {
             var urls = lazyImage(post);
-            if(urls) {
+            console.log(urls);
+
+            if(urls && urls.length > 0) {
                 var random = Math.floor(Math.random() * (urls.length));
-                _photoUrl = (urls.length > 0 && urls[random])
+                _photoUrl = urls[random];
+                console.log('vvv', _photoUrl)
+
             } else if (theme.defaultImgs && theme.defaultImgs.length > 0) {
                 var urls2 = theme.defaultImgs;
                 var random2 = Math.floor(Math.random() * (urls2.length));
                 _photoUrl = (urls2.length > 0 && urls2[random2]) || '';
             }
+            console.log('dd' + _photoUrl)
+
         }
 
     %>
@@ -44,7 +32,7 @@ if(!is_home()) { %>
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="<%- url_for(post.path) %>">
+                    <a href="<%= post.link %>" target="_blank">
                         <%- post.title %></a>
                 </h1>
                 <div class="post-meta"> &bull;
@@ -55,19 +43,19 @@ if(!is_home()) { %>
             </div>
             <p class="brief">
                 <% if(post.excerpt) { %>
-                    <%= strip_html(post.excerpt) + '…' %>
+                    <%- post.excerpt %>
                 <% } else { %>
-                    <%= truncate(strip_html(post.content), {length: theme.excerptLength || 120, separator: ''}) %>
+                    <%- post.content %>
                 <% } %>
             </p>
         </div>
         <% if(theme.homePanel) { %>
             <footer class="post-footer clearfix">
                 <div class="pull-left tag-list">
-                    <%- partial('_partial/article-meta', {post: post}) %>
+
                 </div>
                 <div class="post-permalink">
-                    <a href="<%- url_for(post.path) %>" class="btn btn-default">
+                    <a href="<%= post.link %>" target="_blank">
                         <%= __('read_more') %></a>
                 </div>
             </footer>
