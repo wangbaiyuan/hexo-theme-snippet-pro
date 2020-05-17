@@ -1202,6 +1202,24 @@ pre {
 .main-footer {
   background: #202020;
   color: #959595;
+  /*====================================================
+     copyright
+  ====================================================*/
+}
+.main-footer .copyright {
+  background: #111;
+  font-size: 13px;
+  text-align: center;
+  color: #666666;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #303030;
+}
+.main-footer .copyright span {
+  margin: 0 0.2em;
+}
+.main-footer .copyright a {
+  color: #666666;
 }
 /*====================================================
     sidebar
@@ -1427,24 +1445,6 @@ pre {
 }
 #article-toc .toc .toc-item.toc-level-2 > .toc-link {
   font-size: 15px;
-}
-/*====================================================
-   copyright
-====================================================*/
-.copyright {
-  background: #111;
-  font-size: 13px;
-  text-align: center;
-  color: #666666;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-top: 1px solid #303030;
-}
-.copyright span {
-  margin: 0 0.5em;
-}
-.copyright a {
-  color: #666666;
 }
 /*====================================================
    back-to-top and toc-btn

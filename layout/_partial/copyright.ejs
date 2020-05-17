@@ -2,21 +2,22 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <%- partial('_partial/busuanzi') %>
-            </div>
-            <div class="col-sm-12">
                 <span>&copy;
-                    <%= theme.since %> - <%= new Date().getFullYear();%>
+                    <%= theme.since %> - <%= new Date().getFullYear(); %>
                     <a href="<%= config.url %>" target="_blank"><%= config.title %></a>
                     <% if(theme.beian) { %><a href="//beian.miit.gov.cn/" target="_blank" rel="nofollow">
                         <%= theme.beian %></a>
                     <% } %>
-                </span> |
+                </span>|
+                <span>
+                   <%- partial('_vendor/analytics/index') %>
+                </span>|
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
+                </span>|
                 <span>
-                    Theme by <a href="https://github.com/geekeren/hexo-theme-snippet-pro" class="copyright-links" target="_blank" rel="nofollow">Snippet Pro</a>
+                    Theme by <a href="https://github.com/geekeren/hexo-theme-snippet-pro" class="copyright-links"
+                                target="_blank" rel="nofollow">Snippet Pro</a>
                 </span>
             </div>
         </div>

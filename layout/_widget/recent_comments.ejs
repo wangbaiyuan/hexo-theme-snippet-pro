@@ -7,10 +7,12 @@
         <%
         const recentComments = getWPComments(site.data)
                 .concat(getGithubComments(site.data))
-                .slice(0, 10)
-                .sort((comment1, comment2) => comment1.comment_date < comment2.comment_date);%>
+                .sort((c1, c2) => (
+                        moment(c2.comment_date_gmt).toDate().getTime()
+                        - moment(c1.comment_date_gmt).toDate().getTime())
+                ); %>
         <%-
-            partial('_partial/comments', {comments: recentComments, view: 'brief'});
+        partial('_partial/comments', {comments: recentComments, view: 'brief'});
         %>
     </div>
 </div>
