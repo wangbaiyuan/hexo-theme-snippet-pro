@@ -216,8 +216,8 @@ gitalk:
    enable: true
    clientID: 8fbc26599e94fd5e4f2d
    clientSecret: 16d6dc93d6a850229a9fd96c74096bd5d491eb82
-   repo: wangbaiyuan.cn
-   owner: geekeren
+   repo: blog
+   owner: wangbaiyuan
    admin: geekeren
    perPage: 10
    distractionFreeMode: true
