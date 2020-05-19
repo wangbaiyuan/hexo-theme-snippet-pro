@@ -24,7 +24,7 @@
         <div class="post-content">
             <header class="post-head home-post-head">
                 <% if(post.icon) { %>
-                    <img src="<%= post.icon %>" alt="<%- post.author %>">
+                    <img onerror="setDefaultImage()" src="<%= post.icon %>" alt="<%- post.author %>">
                 <% }%>
                 <div class="title">
                     <div>
