@@ -19,5 +19,6 @@ const hashIdOfPost = (post) => post.abbrlink || md5(post.slug);
 
 module.exports = {
     hashIdOfPost,
-    lazyImage
+    lazyImage,
+    md5,
 }

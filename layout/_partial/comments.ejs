@@ -8,7 +8,7 @@
                     <%
                     if (view === 'detail') { %>
                         <div class="gt-avatar gt-comment-avatar">
-                            <img src="https://wangbaiyuan.cn/avatar/<%= comment.comment_author %>.png?size=128"
+                            <img src="https://wangbaiyuan.cn/wp-content/avatars/<%= md5(comment.comment_author.trim().toLowerCase()) %>.png"
                                  alt="@<%= comment.comment_author %>">
                         </div>
                     <%
