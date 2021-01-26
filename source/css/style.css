@@ -958,26 +958,11 @@ pre {
   margin: 0;
   padding: 0;
 }
-.post-content code {
+.post-content code, .post-content tt {
   color: #808080;
-  font-size: 0.96em;
   background-color: #f9f9f9;
   padding: 1px 2px;
   border: 1px solid #dadada;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  word-wrap: break-word;
-}
-.post-content tt {
-  color: #808080;
-  font-size: 0.96em;
-  background-color: #f9f9f9;
-  padding: 1px 2px;
-  border: 1px solid #dadada;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
   border-radius: 2px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   word-wrap: break-word;
@@ -1678,7 +1663,6 @@ code {
   padding: 2px 4px;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
   color: #666666;
   background: #eee;
   -webkit-border-radius: 3px;
